@@ -10,14 +10,14 @@ const App = () => (
 		<Wrapper>
 			<Header/>
 			<Routes/>
-			<Footer/>
 		</Wrapper>
+		<Footer/>
 	</Router>
 );
 
 const Wrapper = styled.div`
 	display: grid;
-  grid-template-rows: 100px auto 100px;
+  grid-template-rows: 100px auto;
   width: 80%;
   margin: auto;
 `;
