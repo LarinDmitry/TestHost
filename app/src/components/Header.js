@@ -6,21 +6,23 @@ const Header = () => {
 	return (
 		<Wrapper>
 			<Title>
-				<Name>Инна Ларина</Name>
-				<Position>Дизайнер интерьеров</Position>
+				<NameLink to='/'>
+					<Name>Инна Ларина</Name>
+					<Position>Дизайнер интерьеров</Position>
+				</NameLink>
 			</Title>
 			<List>
 				<ListItem>
-					<Link to='/'>Главная</Link>
+					<StyleLink to='/'>Главная</StyleLink>
 				</ListItem>
 				<ListItem>
-					<Link to='/resume'>Резюме</Link>
+					<StyleLink to='/resume'>Резюме</StyleLink>
 				</ListItem>
 				<ListItem>
-					<Link to='/projects'>Проекты</Link>
+					<StyleLink to='/projects'>Проекты</StyleLink>
 				</ListItem>
 				<ListItem>
-					<Link to='/contacts'>Контакты</Link>
+					<StyleLink to='/contacts'>Контакты</StyleLink>
 				</ListItem>
 			</List>
 		</Wrapper>
@@ -29,23 +31,44 @@ const Header = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 325px 1fr;
 `;
 
 const List = styled.ul`
-  margin: 0;
   padding: 0;
   display: flex;
+  font-size: 24px;
+  font-family: cursive;
+  margin: auto 0 auto auto;
 `;
 
 const Title = styled.div``;
 
-const Name = styled.div``;
+const StyleLink = styled(Link)`
+  color: rgb(139, 139, 139);
+  text-decoration: none;
+`;
 
-const Position = styled.div``;
+const NameLink = styled(Link)`
+  color: rgb(77, 77, 77);
+  text-decoration: none;
+  text-align: right;
+`;
+
+const Name = styled.h1`
+  font-family: cursive;
+  font-size: 50px;
+  margin: 0;
+`;
+
+const Position = styled.div`
+	font-size: 25px;
+  font-family: cursive;
+`;
 
 const ListItem = styled.li`
   list-style: none;
+  margin: 0 20px;
 `;
 
 export default Header;
