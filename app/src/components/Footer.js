@@ -1,30 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
+import PhoneIcon from '../components/Icons/PhoneIcon';
+import MailIcon from './Icons/MailIcon';
+import AddIcon from './Icons/AddIcon';
+import RootIcon from './Icons/RootIcon';
+import Facebook from './Icons/Facebook';
 
 const Footer = () => {
+	const mailLink = 'larin.dm.an@gmail.com';
+	const letLink = '+38(093) 307 62 25';
 	return (
 		<Wrapper>
 			<Block>
-				<Icon>Icon</Icon>
-				<Text>Звоните</Text>
-				<Phone>+3(8093) 307 62 25</Phone>
+				<PhoneIcon/>
+				<InfoWrapper>
+					<BoldText>Звоните</BoldText>
+					<Link href={`tel:${letLink}`}>{letLink}</Link>
+				</InfoWrapper>
 			</Block>
 			<Block>
-				<Icon>Icon</Icon>
-				<Text>Пишите</Text>
-				<Mail>larin.dm.an@gmail.com</Mail>
+				<MailIcon/>
+				<InfoWrapper>
+					<BoldText>Пишите</BoldText>
+					<Link href={`mailto:${mailLink}`}>{mailLink}</Link>
+				</InfoWrapper>
 			</Block>
 			<Block>
-				<Icon>Icon</Icon>
-				<Text>Заходите</Text>
-				<Facebook>FB</Facebook>
-				<Instagramm>IN</Instagramm>
+				<AddIcon/>
+				<InfoWrapper>
+					<BoldText>Заходите</BoldText>
+					<Social>
+						<Link href='https://www.facebook.com/larinDmitriy' target='_blank'><Facebook/></Link>
+					</Social>
+				</InfoWrapper>
 			</Block>
-
 			<Block>
-				<Icon>Icon</Icon>
-				<Text>(c) Инна Ларина</Text>
-				<Roots>Сайт создан by Larin Dmitro</Roots>
+				<RootIcon/>
+				<InfoWrapper>
+					<Text>© Инна Ларина</Text>
+					<Text>Сайт создан by <Link href='https://www.linkedin.com/in/larindmitriy/' target='_blank'>Larin Dmitro</Link></Text>
+				</InfoWrapper>
 			</Block>
 		</Wrapper>
 	)
@@ -36,38 +51,37 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
   justify-content: center;
+  align-items: center;
+`;
+
+const Link = styled.a`
+	color: white;
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
 `;
 
 const Block = styled.div`
-	
+	display: grid;
+  grid-template-columns: 50px 1fr;
 `;
 
-const Phone = styled.div`
-	
+const InfoWrapper = styled.div`
+  margin-left: 20px;
+  color: white;
 `;
 
-const Mail = styled.div`
-	
+const Text = styled.div``;
+
+const Social = styled.div`
+	display: flex;
 `;
 
-const Icon = styled.div`
-	
-`;
-
-const Facebook = styled.div`
-	
-`;
-
-const Instagramm = styled.div`
-	
-`;
-
-const Text = styled.div`
-	
-`;
-
-const Roots = styled.div`
-	
+const BoldText = styled.div`
+  font-weight: bold;
+  margin-bottom: 5px;
 `;
 
 export default Footer;
